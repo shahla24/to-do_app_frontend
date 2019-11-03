@@ -1,26 +1,56 @@
+
 import React from 'react';
-
-
-
+const uuidv4 = require('uuid/v4');
 class Task extends React.Component {
+    mouseOver = () => {
 
+    }
+    mouseLeave = () => {
+
+    }
+    deleteTask = () => {
+        //alert('are you sure')
+        //alert(this.props.task.id);
+        this.props.deleteTaskFunc(this.props.task.id);
+    }
     render() {
 
-        return(
-<div className="row">
-<div className="col-8">
-    {this.props.taskDescription}
-</div>
-<div className="col-2">
-    Done
+        const completed = this.props.task.completed;
 
-</div>
-<div className="col-2">
-    Delete
-</div>
-</div>
-);
-    }
+        return (
 
+            <div className="row taskrow">
+                {completed &&
+
+                    <div className="col-12 col-md-6 completedTask">
+
+                        {this.props.task.taskDescription}
+                    </div>
+                }
+
+                {!completed &&
+                    <div className="col-12 col-md-6">
+                        {this.props.task.taskDescription}
+
+                    </div>
+                }
+                <div className="col-6 col-md-3">
+                    <button /*type="button"*/ className="btn btn-primary" onMouseOver={this.mouseOver} onMouseLeave={this.mouseLeave}>
+                        Done
+                        </button>
+                </div>
+                <div>
+                    <div className="col-6 col-md-3">
+                        <button /*type="button"*/ className="btn btn-danger" onclick={this.deleteTask}>
+                            Delete
+                    </button>
+                    </div>
+                </div>
+            </div>
+        );
     }
+}
 export default Task;
+
+
+

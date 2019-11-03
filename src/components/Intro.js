@@ -3,11 +3,11 @@ import React from 'react';
 
 class Intro extends React.Component {
 
-    render(){
+    render() {
         return (
-            <p>    {this.props.introDescription}</p>
-                 
-              );
+            <p>    {this.props.introDescription} </p>
+
+        );
 
     }
 
@@ -15,3 +15,6 @@ class Intro extends React.Component {
 }
 
 export default Intro;
+
+
+
