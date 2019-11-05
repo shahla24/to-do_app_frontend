@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 //import Intro from './components/Intro';
-import Task from './components/Task';
+//import Task from './components/Task';
 import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
@@ -18,7 +18,7 @@ class App extends React.Component {
         { id: uuidv4(), taskDescription: "Collection of catalogue", completed: true },
         { id: uuidv4(), taskDescription: "Update and submit order", completed: false },
         { id: uuidv4(), taskDescription: "prepare individual order", completed: true },
-        { id: uuidv4(), taskDescription: "Pay the invoice", completed: true }
+        { id: uuidv4(), taskDescription: "Pay the invoice", completed: false }
       ]
     };
   }
@@ -42,7 +42,7 @@ class App extends React.Component {
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <TaskCounter count={this.state.tasks.length} />
-        <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+        <TaskList tasks={this.state.tasks} deleteTaskFunc={this.deleteTask} id={this.Id} />
       </div>
 
     );

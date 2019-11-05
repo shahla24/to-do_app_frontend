@@ -1,17 +1,13 @@
 
 import React from 'react';
-const uuidv4 = require('uuid/v4');
+//const uuidv4 = require('uuid/v4');
 class Task extends React.Component {
-    mouseOver = () => {
 
-    }
-    mouseLeave = () => {
-
-    }
     deleteTask = () => {
         //alert('are you sure')
         //alert(this.props.task.id);
         this.props.deleteTaskFunc(this.props.task.id);
+        this.props.addTask(this.props.task.id);
     }
     render() {
 
@@ -35,13 +31,14 @@ class Task extends React.Component {
                     </div>
                 }
                 <div className="col-6 col-md-3">
-                    <button /*type="button"*/ className="btn btn-primary" onMouseOver={this.mouseOver} onMouseLeave={this.mouseLeave}>
+                    <button type="button" className="btn btn-primary" onClick={this.addTask} >
                         Done
+
                         </button>
                 </div>
                 <div>
                     <div className="col-6 col-md-3">
-                        <button /*type="button"*/ className="btn btn-danger" onclick={this.deleteTask}>
+                        <button type="button" className="btn btn-danger" onclick={this.deleteTask}>
                             Delete
                     </button>
                     </div>
