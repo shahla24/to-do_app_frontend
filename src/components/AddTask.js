@@ -18,7 +18,7 @@ class AddTask extends React.Component {
     let taskDescription = this.state.taskDescription;
     taskDescription = event.target.value;
     this.setState({ taskDescription });
-    //this.setState({taskDescription: taskDescription});
+
   }
   render() {
     return (
