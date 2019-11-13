@@ -6,9 +6,11 @@ class Task extends React.Component {
     deleteTask = () => {
         this.props.deleteTaskFunc(this.props.task.id);
     }
-    completedTask = () => {
-        this.props.completedTask(this.props.task.id)
+
+    completeTask = () => {
+        this.props.completeTaskFunc(this.props.task.id)
     }
+
     render() {
         const completed = this.props.task.completed;
         return (
@@ -28,7 +30,7 @@ class Task extends React.Component {
                 }
                 <div className="col-6 col-md-3">
 
-                    <button type="button" className="btn btn-primary" onClick={this.addTask}>
+                    <button type="button" className="btn btn-primary" onClick={this.completeTask}>
                         Done
                             </button>
                 </div>
