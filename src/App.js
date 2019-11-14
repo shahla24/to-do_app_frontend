@@ -23,71 +23,63 @@ class App extends React.Component {
   }
   addTaskToList = (task) => {
     let tasks = this.state.tasks;
-    
+
     tasks.push(task);
     this.setState({ tasks: tasks });
-}
+  }
   deleteTask = (taskId) => {
 
     let tasks = this.state.tasks;
 
-    let filteredTasks= tasks.filter(function (task) {
+    let filteredTasks = tasks.filter(function (task) {
       return task.id !== taskId;
-       });
+    });
     this.setState({ tasks: filteredTasks });
   }
-// completeTask = (taskId) => {
-  //   // This is where you need to do the logic 
-  //   // for marking the task as completed
 
-  //   let tasks = this.state.tasks;
-  //   let completeTasks = tasks.filter(function (task) {
-  //     return task.id === taskId;
-  //   });
-  //   this.setState({tasks: completeTasks});
-  // }
-completeTask = (taskId) => {
-const completeTask = this.state.tasks.map(task => {
-  if(task.id === taskId) {
-    task.completed = true
+
+  completeTask = (taskId) => {
+    const completeTask = this.state.tasks.map(task => {
+      if (task.id === taskId) {
+        task.completed = true
+      }
+      return task;
+    });
+    this.setState({ tasks: completeTask })
   }
-  return task;
-});
-this.setState({tasks: completeTask})
-}
-render() {
-const completedTasks = this.state.tasks.filter(task => {
-  return task.completed;
-});
-// const incompleteTasks = this.state.tasks.filter(task => {
-//   return !task.completed;
-// });
+  render() {
+    const completedTasks = this.state.tasks.filter(task => {
+      return task.completed;
+    });
+    // const incompleteTasks = this.state.tasks.filter(task => {
+    //   return task.completed ? false : true;
+    // });
 
-  return (
+    return (
       <div className="container">
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <TaskCounter count={this.state.tasks.length} />
-  
-         <div className="col-12 col-md-6 id=completeTaskContainer">
- {completedTasks.map(task => {
- return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
- }
 
- 
- )} 
- 
+        {completedTasks.map(task => {
+          return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
+        })
+        }
+      </div>
 
- {/* //<div className="col-12 col-md-6 id=incompleteTaskContainer"> 
-//  {incompleteTasks.map(task => { */}
-   {/* return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
-//  } */}
+      //  <div className="col-12 col-md-6 id=incompleteTaskContainer"> 
+      //   {incompleteTasks.map(task => { 
+      //    return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
+      //  })
+      //   } 
+      /* //<div className="col-12 col-md-6 id=incompleteTaskContainer"> 
+     //  {incompleteTasks.map(task => { */
+      /* return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
+   //  } */
 
-</div>
-</div>
-//}
-  ) 
-}
+
+    )
+  }
 }
 export default App;
 
