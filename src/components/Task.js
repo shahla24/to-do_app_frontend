@@ -17,7 +17,7 @@ class Task extends React.Component {
             <div className="row taskrow">
                 {completed &&
 
-                    <div className="col-12 col-md-6 completedTasks">
+                    <div className="col-12 col-md-6 completedTask">
 
                         {this.props.task.taskDescription}
                     </div>

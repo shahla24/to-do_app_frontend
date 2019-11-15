@@ -48,36 +48,14 @@ class App extends React.Component {
     this.setState({ tasks: completeTask })
   }
   render() {
-    const completedTasks = this.state.tasks.filter(task => {
-      return task.completed;
-    });
-    // const incompleteTasks = this.state.tasks.filter(task => {
-    //   return task.completed ? false : true;
-    // });
-
     return (
       <div className="container">
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <TaskCounter count={this.state.tasks.length} />
 
-        {completedTasks.map(task => {
-          return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
-        })
-        }
+        <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
       </div>
-
-      //  <div className="col-12 col-md-6 id=incompleteTaskContainer"> 
-      //   {incompleteTasks.map(task => { 
-      //    return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
-      //  })
-      //   } 
-      /* //<div className="col-12 col-md-6 id=incompleteTaskContainer"> 
-     //  {incompleteTasks.map(task => { */
-      /* return <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} key={task.id} deleteTaskFunc={this.deleteTask} id={task.id} />
-   //  } */
-
-
     )
   }
 }
