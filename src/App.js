@@ -48,12 +48,12 @@ class App extends React.Component {
     this.setState({ tasks: completeTask })
   }
   render() {
+
     return (
       <div className="container">
         <Header />
         <AddTask newTask={this.addTaskToList} />
         <TaskCounter count={this.state.tasks.length} />
-
         <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
       </div>
     )

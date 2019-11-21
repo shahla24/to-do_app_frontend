@@ -21,7 +21,7 @@
   color: #09d3ac;
 }
 .completedTask {
-  text-decoration: line-through;
+  text-decoration: line-through solid;
 }
 
 .taskRow {
