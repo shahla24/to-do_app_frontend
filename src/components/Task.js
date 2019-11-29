@@ -17,14 +17,14 @@ class Task extends React.Component {
             <div className="row taskrow">
                 {completed &&
 
-                    <div className="col-12 col-md-6 completedTask">
+                    <div className="col-12 col-md-6  completedTask">
 
                         {this.props.task.taskDescription}
                     </div>
                 }
 
                 {!completed &&
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-6 ">
                         {this.props.task.taskDescription}
                     </div>
                 }

@@ -12,12 +12,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       tasks: [
-        { id: uuidv4(), taskDescription: "Distribution of catalogue", completed: false },
-        { id: uuidv4(), taskDescription: "Collection of catalogue", completed: true },
-        { id: uuidv4(), taskDescription: "Update and submit order", completed: false },
-        { id: uuidv4(), taskDescription: "prepare individual order", completed: true },
-        { id: uuidv4(), taskDescription: "Pay the invoice", completed: false },
-        { id: uuidv4(), taskDescription: "check calender dates", completed: false }
+        { id: uuidv4(), taskDescription: "Distribution of catalogue", completed: false, dateCreated: "2019-11-25" },
+        { id: uuidv4(), taskDescription: "Collection of catalogue", completed: true, dateCreated: "2019-11-23" },
+        { id: uuidv4(), taskDescription: "Update and submit order", completed: false, dateCreated: "2019-11-20" },
+        { id: uuidv4(), taskDescription: "prepare individual order", completed: true, dateCreated: "2019-11-10" },
+        { id: uuidv4(), taskDescription: "Pay the invoice", completed: false, dateCreated: "2019-11-08" },
+        { id: uuidv4(), taskDescription: "check calender dates", completed: false, dateCreated: "2019-11-05" }
       ]
     };
   }
@@ -50,11 +50,14 @@ class App extends React.Component {
   render() {
 
     return (
-      <div className="container">
+      <div className="App">
         <Header />
         <AddTask newTask={this.addTaskToList} />
+        <hr />
         <TaskCounter count={this.state.tasks.length} />
+        <hr />
         <TaskList tasks={this.state.tasks} completeTaskFunc={this.completeTask} deleteTaskFunc={this.deleteTask} />
+        <hr />
       </div>
     )
   }
