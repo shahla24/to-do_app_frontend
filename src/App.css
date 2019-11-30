@@ -1,7 +1,10 @@
 .App {
   text-align: center;
-  background-image: url("https://st3.depositphotos.com/4395427/17465/i/1600/depositphotos_174656722-stock-photo-grass-flower-field-spring-background.jpg"); 
-  background-color:rgb(188, 228, 180);
+
+  background-image:url("https://image.freepik.com/free-vector/beauty-soft-yellow-watercolor-background_3785-259.jpg");
+
+  border:2px solid rgb(194, 144, 7);
+  background-color:rgb(189, 187, 82);
   min-height:450px;
   width: 550px;
   margin: 20px auto;
@@ -13,6 +16,8 @@
 }
 
 .App-header {
+
+
  text-align: left;
   font-size: inherit;
   font-family: 'Times New Roman', Times, serif;
@@ -23,15 +28,15 @@
 }
 
 .App-link {
-  color: #bea0c4;
+  color: #d6d87c;
 }
 .completedTask {
   text-decoration: line-through solid;
-  color: rgb(27, 27, 27)
+  color: black;
 }
+
 
 .taskRow {
 padding-bottom: 10px;
 padding-top: 10px;
-border-top: 2px solid rgb(70, 70, 153);
 }

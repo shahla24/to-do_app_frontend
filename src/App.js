@@ -5,6 +5,7 @@ import TaskCounter from './components/TaskCounter';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
 const uuidv4 = require('uuid/v4');
+//const moment = require('moment');
 
 
 class App extends React.Component {
@@ -12,7 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       tasks: [
-        { id: uuidv4(), taskDescription: "Distribution of catalogue", completed: false, dateCreated: "2019-11-25" },
+       // { id: uuidv4(), taskDescription: "Distribution of catalogue", completed: false, dateCreated: moment().add(2,'days'.format("YYYY-MM-DD"))  },
         { id: uuidv4(), taskDescription: "Collection of catalogue", completed: true, dateCreated: "2019-11-23" },
         { id: uuidv4(), taskDescription: "Update and submit order", completed: false, dateCreated: "2019-11-20" },
         { id: uuidv4(), taskDescription: "prepare individual order", completed: true, dateCreated: "2019-11-10" },

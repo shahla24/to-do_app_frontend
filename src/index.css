@@ -1,25 +1,37 @@
 body {
+  border:2px solid rgb(194, 144, 7);
  margin: 10px;
+} @media only screen and (max-width:1800px) {
+  body {
+    background-color: rgb(205, 214, 71);
+    color: rgb(235, 219, 81);
+  }
+} @media only screen and (max-width:1600px) {
+  body {
+    background-color: rgb(231, 214, 119);
+    color: rgb(223, 150, 91);
+  }
+
 } @media only screen and (max-width:1400px) {
   body {
-    background-color: rgb(212, 148, 204);
-    color: #cb3fe7;
+    background-color: rgb(224, 226, 96);
+    color: #d19a04;
   }
 
 } @media only screen and (max-width:1200px) {
-H  body {
-    background-color: rgb(211, 158, 208);
-    color: rgb(203, 121, 206);
+  body {
+    background-color: rgb(220, 236, 149);
+    color: rgb(233, 166, 23);
   }
 } @media only screen and (max-width:800px) {
   body {
-    background-color: rgb(240, 184, 192);
-    color: rgb(163, 121, 175);
+    background-color: rgb(236, 224, 111);
+    color: rgb(224, 154, 3);
   }
 } @media only screen and (max-width:600px) {
   body {
-    background-color: rgb(240, 184, 192);
-    color: rgb(180, 123, 176);
+    background-color: rgb(205, 214, 71);
+    color: rgb(240, 113, 9);
   }
 }
 /* {
@@ -33,20 +45,24 @@ H  body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-    font-weight: bold;
+    font-weight: bold;  
 }
 
 .Header{
  text-align: center;
-}
+
+ }
 .Container {
    text-align: center;
    margin-top: 10px;
    padding-bottom: 10px;
-}
+  }
 .navbar {
   height: 50px;
-  background-color:rgb(212, 159, 212);
+  border-radius:4px;
+  padding: 6px;
+  border:2px solid rgb(194, 144, 7);
+  background-color:rgb(233, 205, 84);
   color:black;
   margin-bottom: 15px;
   text-align: center;
@@ -61,12 +77,12 @@ font-weight: bold;
 .btn {
   font-family:  Arial, Helvetica, sans-serif;
   font-weight: bold;
-  background-color: rgb(153, 124, 180);
+  background-color: rgb(233, 219, 91);
   padding: 6px ;
   border-radius:4px;
-  border: 2px solid blanchedalmond;
+  border: 2px solid rgb(233, 147, 17);
   color:black;
-  box-shadow: lightslategray;
+  box-shadow: rgb(167, 188, 209);
 margin-inline:auto ;
 }
 
