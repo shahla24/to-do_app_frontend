@@ -45,5 +45,4 @@ class AddTask extends React.Component {
 export default AddTask;
 
 
-
 // background-image: url("https://st3.depositphotos.com/4395427/17465/i/1600/depositphotos_174656722-stock-photo-grass-flower-field-spring-background.jpg"); 
