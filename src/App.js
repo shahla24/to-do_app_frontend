@@ -55,34 +55,34 @@ class App extends React.Component {
       });
   }
  
-  // deleteTask = (taskId) => {
-  //       axios.delete(
-  //          'https://3tx8f9ktz0.execute-api.eu-west-2.amazonaws.com/dev/tasks/{taskId}')
-           
-  //         .then((response) => {
-  //           const filteredTask = this.state.tasks.filter(item => {
-  //             // eslint-disable-next-line no-undef
-  //             return task.taskId !== taskId;
-  //           });
-  //           this.setState({
-  //             tasks: filteredTask
-  //           })
-  //         })
-  //         .catch(function (error) {
-  //           console.log(error);
-  //         });
-  //     }
-
-
   deleteTask = (taskId) => {
+        axios.delete(
+           'https://3tx8f9ktz0.execute-api.eu-west-2.amazonaws.com/dev/tasks/{taskId}')
+           
+          .then((response) => {
+            const filteredTask = this.state.tasks.filter(item => {
+              // eslint-disable-next-line no-undef
+              return task.taskId !== taskId;
+            });
+            this.setState({
+              tasks: filteredTask
+            })
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
 
-    let tasks = this.state.tasks;
 
-    let filteredTasks = tasks.filter(function (task) {
-      return task.id !== taskId;
-    });
-    this.setState({ tasks: filteredTasks });
-  }
+  // deleteTask = (taskId) => {
+
+  //   let tasks = this.state.tasks;
+
+  //   let filteredTasks = tasks.filter(function (task) {
+  //     return task.id !== taskId;
+  //   });
+  //   this.setState({ tasks: filteredTasks });
+  // }
 
   completeTask = (taskId) => {
     const completeTask = this.state.tasks.map(task => {
